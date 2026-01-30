@@ -1,0 +1,59 @@
+SQL SYNTAX RULES
+
+1. BASIC STRUCTURE RULES
+
+-   Every SQL statement starts with a keyword (SELECT, INSERT, UPDATE,
+    DELETE, CREATE, DROP, etc.).
+-   Clause order matters in SQL statements.
+
+Correct SELECT order: SELECT column_list FROM table_name WHERE condition
+GROUP BY column HAVING condition ORDER BY column;
+
+-   Strings must use single quotes: WHERE name = ‘Ritik’;
+
+-   Aliases can be used with or without AS: SELECT salary AS
+    employee_salary FROM employees;
+
+2. CASE SENSITIVITY
+
+-   SQL keywords are NOT case sensitive: select * from employees;
+    SELECT * FROM employees;
+
+-   Table and column case sensitivity depends on the database: MySQL →
+    Sometimes PostgreSQL → Yes (if quoted) SQL Server → Usually No
+    Oracle → No (unless quoted)
+
+Best practice: - Write SQL keywords in UPPERCASE. - Avoid quoted
+identifiers unless necessary.
+
+3. COMMENTS IN SQL
+
+Single-line comment: – This is a comment
+
+Multi-line comment: / This is a multi-line comment /
+
+Comments are ignored by the SQL engine.
+
+4. SQL STATEMENT TYPES
+
+DDL (Data Definition Language) → Defines structure Commands: CREATE,
+ALTER, DROP, TRUNCATE, RENAME
+
+DML (Data Manipulation Language) → Manipulates data Commands: SELECT,
+INSERT, UPDATE, DELETE
+
+DCL (Data Control Language) → Controls permissions Commands: GRANT,
+REVOKE
+
+TCL (Transaction Control Language) → Controls transactions Commands:
+COMMIT, ROLLBACK, SAVEPOINT
+
+5. SEMICOLONS AND STATEMENT TERMINATORS
+
+-   Semicolon (;) ends a SQL statement.
+-   Some databases require it strictly (PostgreSQL, Oracle).
+-   Best practice: Always end statements with a semicolon.
+
+Example: SELECT * FROM employees; SELECT * FROM departments;
+
+END OF DOCUMENT
