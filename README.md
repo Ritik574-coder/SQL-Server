@@ -61,45 +61,45 @@ Foundations (3-4 weeks) → Intermediate (4-6 weeks) → Advanced (6-8 weeks) �
 ### 📚 Topics to Cover
 
 #### 1.1 Database Concepts
-- [ ] What is a database?
-- [ ] RDBMS vs NoSQL
-- [ ] Database vs Spreadsheet
-- [ ] Tables, rows, columns
-- [ ] Primary keys and foreign keys
-- [ ] Database schema
-- [ ] ACID properties
+- [DONE] What is a database?
+- [DONE] RDBMS vs NoSQL
+- [DONE] Database vs Spreadsheet
+- [DONE] Tables, rows, columns
+- [DONE] Primary keys and foreign keys
+- [DONE] Database schema
+- [DONE] ACID properties
 
 #### 1.2 SQL Basics
-- [ ] SQL syntax rules
-- [ ] Case sensitivity
-- [ ] Comments (single-line and multi-line)
-- [ ] SQL statement types (DDL, DML, DCL, TCL)
-- [ ] Semicolons and statement terminators
+- [DONE] SQL syntax rules
+- [DONE] Case sensitivity
+- [DONE] Comments (single-line and multi-line)
+- [DONE] SQL statement types (DDL, DML, DCL, TCL)
+- [DONE] Semicolons and statement terminators
 
 #### 1.3 Setting Up Environment
-- [ ] Installing PostgreSQL
-- [ ] Installing MySQL
-- [ ] SQL clients (pgAdmin, DBeaver, MySQL Workbench)
-- [ ] Command-line tools (psql, mysql)
-- [ ] Creating your first database
+- [DONE] Installing PostgreSQL
+- [DONE] Installing MySQL
+- [DONE] SQL clients (pgAdmin, DBeaver, MySQL Workbench)
+- [DONE] Command-line tools (psql, mysql)
+- [DONE] Creating your first database
 
 #### 1.4 Data Types
-- [ ] Numeric types (INTEGER, BIGINT, DECIMAL, FLOAT)
-- [ ] Character types (CHAR, VARCHAR, TEXT)
-- [ ] Date/Time types (DATE, TIME, TIMESTAMP)
-- [ ] Boolean type
-- [ ] JSON and JSONB (PostgreSQL)
-- [ ] Arrays (PostgreSQL)
-- [ ] NULL values
+- [DONE] Numeric types (INTEGER, BIGINT, DECIMAL, FLOAT)
+- [DONE] Character types (CHAR, VARCHAR, TEXT)
+- [DONE] Date/Time types (DATE, TIME, TIMESTAMP)
+- [DONE] Boolean type
+- [DONE] JSON and JSONB (PostgreSQL)
+- [DONE] Arrays (PostgreSQL)
+- [DONE] NULL values
 
 #### 1.5 Creating Tables (DDL)
-- [ ] CREATE TABLE syntax
-- [ ] Column definitions
-- [ ] Constraints (NOT NULL, UNIQUE, CHECK)
-- [ ] Primary keys
+- [DONE] CREATE TABLE syntax
+- [DONE] Column definitions
+- [DONE] Constraints (NOT NULL, UNIQUE, CHECK)
+- [DONE] Primary keys
 - [ ] Foreign keys
-- [ ] Default values
-- [ ] AUTO_INCREMENT / SERIAL
+- [DONE] Default values
+- [DONE] AUTO_INCREMENT / SERIAL
 - [ ] ALTER TABLE (add, modify, drop columns)
 - [ ] DROP TABLE
 - [ ] TRUNCATE TABLE
