@@ -1,0 +1,107 @@
+3. SETTING UP SQL ENVIRONMENT
+
+This document explains how to set up a SQL development environment,
+including installing PostgreSQL, MySQL, GUI clients, and command-line
+tools.
+
+  --------------------------
+  1. INSTALLING POSTGRESQL
+  --------------------------
+
+Step 1: Download PostgreSQL - Visit:
+https://www.postgresql.org/download/ - Choose your operating system
+(Windows, macOS, Linux).
+
+Step 2: Run Installer (Windows/macOS) - Download the installer from
+EnterpriseDB. - Run setup file. - Select components: ✔ PostgreSQL Server
+✔ pgAdmin (GUI tool) ✔ Command Line Tools - Set a password for the
+default “postgres” user. - Choose default port: 5432 (recommended).
+
+Step 3: Verify Installation Open Command Prompt or Terminal:
+
+psql -U postgres
+
+If connected successfully, installation is complete.
+
+Default Configuration: - Port: 5432 - Default database: postgres -
+Default superuser: postgres
+
+  ---------------------
+  2. INSTALLING MYSQL
+  ---------------------
+
+Step 1: Download MySQL - Visit: https://dev.mysql.com/downloads/ -
+Download MySQL Community Server.
+
+Step 2: Run Installer - Choose “Developer Default” setup
+(recommended). - Set root password. - Default port: 3306. - Complete
+installation.
+
+Step 3: Verify Installation Open Command Prompt or Terminal:
+
+mysql -u root -p
+
+Enter password to connect.
+
+Default Configuration: - Port: 3306 - Default user: root
+
+  ---------------------------------
+  3. SQL CLIENT TOOLS (GUI BASED)
+  ---------------------------------
+
+These tools provide graphical interfaces for database management.
+
+A. pgAdmin (For PostgreSQL) - Installed automatically with PostgreSQL. -
+Web-based GUI. - Features: - Query editor - Database management -
+Backup/Restore - User management
+
+B. MySQL Workbench (For MySQL) - Official MySQL GUI tool. - Features: -
+SQL editor - Data modeling - Server administration - Performance
+monitoring
+
+C. DBeaver (Universal SQL Client) - Supports PostgreSQL, MySQL, SQL
+Server, Oracle, etc. - Cross-platform. - Good for multi-database
+environments. - Advanced features: - ER diagrams - Data export/import -
+Query profiling
+
+Professional Recommendation: - Use DBeaver if working with multiple
+database systems. - Use official tools for engine-specific advanced
+features.
+
+  -----------------------
+  4. COMMAND-LINE TOOLS
+  -----------------------
+
+A. psql (PostgreSQL CLI) Command to connect:
+
+psql -U username -d database_name -h localhost -p 5432
+
+Useful Commands: → List databases → List tables able → Describe table →
+Quit
+
+B. mysql (MySQL CLI) Command to connect:
+
+mysql -u username -p
+
+Useful Commands: SHOW DATABASES; USE database_name; SHOW TABLES;
+DESCRIBE table_name; EXIT;
+
+Why Learn CLI? - Faster than GUI - Used in servers and production
+systems - Essential for DevOps and backend engineering
+
+  ----------------------------------
+  ENVIRONMENT SETUP BEST PRACTICES
+  ----------------------------------
+
+1.  Always remember database ports: PostgreSQL → 5432 MySQL → 3306
+
+2.  Use strong passwords for root/superuser.
+
+3.  Do not use root/postgres user in production apps. Create separate
+    application users.
+
+4.  Keep server and client tools updated.
+
+5.  Practice both GUI and CLI usage for full control.
+
+END OF DOCUMENT
