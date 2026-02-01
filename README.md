@@ -105,14 +105,14 @@ Foundations (3-4 weeks) → Intermediate (4-6 weeks) → Advanced (6-8 weeks) �
 - [ ] TRUNCATE TABLE
 
 #### 1.6 Basic SELECT Queries
-- [ ] SELECT statement syntax
-- [ ] Selecting all columns (*)
-- [ ] Selecting specific columns
-- [ ] Column aliases (AS)
-- [ ] DISTINCT keyword
-- [ ] LIMIT / TOP / FETCH FIRST
-- [ ] ORDER BY (ASC, DESC)
-- [ ] Ordering by multiple columns
+- [DONE] SELECT statement syntax
+- [DONE] Selecting all columns (*)
+- [DONE] Selecting specific columns
+- [DONE] Column aliases (AS)
+- [DONE] DISTINCT keyword
+- [DONE] LIMIT / TOP / FETCH FIRST
+- [DONE] ORDER BY (ASC, DESC)
+- [DONE] Ordering by multiple columns
 
 ### 🎯 Projects
 
