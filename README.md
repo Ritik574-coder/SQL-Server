@@ -97,10 +97,10 @@ Foundations (3-4 weeks) → Intermediate (4-6 weeks) → Advanced (6-8 weeks) �
 - [DONE] Column definitions
 - [DONE] Constraints (NOT NULL, UNIQUE, CHECK)
 - [DONE] Primary keys
-- [ ] Foreign keys
-- [DONE] Default values
+- [DONE] Foreign keys
+- [DONE.] Default values
 - [DONE] AUTO_INCREMENT / SERIAL
-- [ ] ALTER TABLE (add, modify, drop columns)
+- [DONE.] ALTER TABLE (add, modify, drop columns)
 - [ ] DROP TABLE
 - [ ] TRUNCATE TABLE
 
