@@ -101,7 +101,7 @@ Foundations (3-4 weeks) → Intermediate (4-6 weeks) → Advanced (6-8 weeks) �
 - [DONE.] Default values
 - [DONE] AUTO_INCREMENT / SERIAL
 - [DONE.] ALTER TABLE (add, modify, drop columns)
-- [ ] DROP TABLE
+- [DONE.] DROP TABLE
 - [ ] TRUNCATE TABLE
 
 #### 1.6 Basic SELECT Queries
