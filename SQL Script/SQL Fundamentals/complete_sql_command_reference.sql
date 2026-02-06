@@ -6,8 +6,8 @@
 =====================================================================
  COMPLETE SQL REFERENCE GUIDE
  Covers: DDL, DML, DQL, DCL, TCL and Important SQL Clauses
- Author : Ritik
- Level  : Beginner → Advanced
+ Author : Ritik__
+ Level  : Beginner -> Advanced
 =====================================================================
 */
 
