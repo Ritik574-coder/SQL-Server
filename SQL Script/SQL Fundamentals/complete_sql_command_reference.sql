@@ -13,7 +13,7 @@
 
 
 /* ================================================================
-   1️⃣ DDL – Data Definition Language
+   1. DDL – Data Definition Language
    Used to define and modify database structure
 ================================================================ */
 
@@ -65,7 +65,7 @@ EXEC sp_rename 'sales.employee', 'employee_new';
 
 
 /* ================================================================
-   2️⃣ DML – Data Manipulation Language
+   2. DML – Data Manipulation Language
    Used to manipulate data inside tables
 ================================================================ */
 
@@ -109,7 +109,7 @@ WHEN NOT MATCHED THEN
 
 
 /* ================================================================
-   3️⃣ DQL – Data Query Language
+   3. DQL – Data Query Language
    Used to retrieve data
 ================================================================ */
 
@@ -127,7 +127,7 @@ ORDER BY salary DESC;
 
 
 /* ================================================================
-   4️⃣ DCL – Data Control Language
+   4. DCL – Data Control Language
    Used for permissions and access control
 ================================================================ */
 
@@ -147,7 +147,7 @@ REVOKE INSERT ON sales.employee FROM user_name;
 
 
 /* ================================================================
-   5️⃣ TCL – Transaction Control Language
+   5. TCL – Transaction Control Language
    Manages transactions
 ================================================================ */
 
