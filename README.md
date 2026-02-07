@@ -98,11 +98,11 @@ Foundations (3-4 weeks) → Intermediate (4-6 weeks) → Advanced (6-8 weeks) �
 - [DONE] Constraints (NOT NULL, UNIQUE, CHECK)
 - [DONE] Primary keys
 - [DONE] Foreign keys
-- [DONE.] Default values
+- [DONE] Default values
 - [DONE] AUTO_INCREMENT / SERIAL
-- [DONE.] ALTER TABLE (add, modify, drop columns)
-- [DONE.] DROP TABLE
-- [DONE.] TRUNCATE TABLE
+- [DONE] ALTER TABLE (add, modify, drop columns)
+- [DONE] DROP TABLE
+- [DONE] TRUNCATE TABLE
 
 #### 1.6 Basic SELECT Queries
 - [DONE] SELECT statement syntax
