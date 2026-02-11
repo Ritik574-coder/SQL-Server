@@ -69,6 +69,7 @@ CREATE TABLE employee
 );
 GO
 
+-- insert data into employee table 
 INSERT INTO employee (first_name, last_name, email, hire_date, salary, department) VALUES
 ('Amit', 'Sharma', 'amit.sharma@example.com', '2020-01-15', 55000.00, 'HR'),
 ('Priya', 'Verma', 'priya.verma@example.com', '2019-03-22', 62000.00, 'Finance'),
