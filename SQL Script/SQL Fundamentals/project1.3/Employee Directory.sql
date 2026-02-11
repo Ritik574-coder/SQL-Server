@@ -62,7 +62,7 @@ CREATE TABLE employee
     employee_id INT IDENTITY(1,1) PRIMARY KEY,
     first_name  NVARCHAR(100) NOT NULL,
     last_name   NVARCHAR(100) NOT NULL,
-    email       NVARCHAR(100) UNIQUE NOT NULL,
+    email       NVARCHAR(100) NOT NULL,
     hire_date   DATE,
     salary      DECIMAL(10,2),
     department  NVARCHAR(151) NOT NULL
@@ -93,6 +93,26 @@ INSERT INTO employee (first_name, last_name, email, hire_date, salary, departmen
         ('Alok', 'Mishra', 'alok.mishra@example.com', '2020-02-23', 77000.00, 'Marketing')
 ;GO
 
+--Write basic queries to explore the data
+SELECT * FROM employee ; 
+-- select top 5 employee only
+SELECT TOP 5 * FROM employee ;
+-- select top 5 employee taht have high salary ; 
+SELECT TOP 5 * FROM employee
+ORDER BY salary DESC ;
+-- select top 5 employee that have low salary ; 
+SELECT TOP 5 * FROM employee 
+ORDER BY salary ASC ; 
+--select those employee they are from her department 
+SELECT * FROM employee 
+WHERE department = 'HR' ;
+-- select those employee_id they are more then ome type in these table 
+SELECT
+    email,
+    COUNT(*) AS email_count
+FROM employee
+GROUP BY email
+HAVING COUNT(*) > 1;
 
 
 
