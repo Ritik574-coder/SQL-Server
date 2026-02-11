@@ -69,6 +69,28 @@ CREATE TABLE employee
 );
 GO
 
+INSERT INTO employee (first_name, last_name, email, hire_date, salary, department) VALUES
+('Amit', 'Sharma', 'amit.sharma@example.com', '2020-01-15', 55000.00, 'HR'),
+('Priya', 'Verma', 'priya.verma@example.com', '2019-03-22', 62000.00, 'Finance'),
+('Rohan', 'Singh', 'rohan.singh@example.com', '2021-07-10', 48000.00, 'IT'),
+('Sneha', 'Patel', 'sneha.patel@example.com', '2018-11-05', 75000.00, 'Marketing'),
+('Vikas', 'Gupta', 'vikas.gupta@example.com', '2022-02-18', 51000.00, 'Sales'),
+('Anjali', 'Mehta', 'anjali.mehta@example.com', '2020-09-30', 67000.00, 'Finance'),
+('Karan', 'Yadav', 'karan.yadav@example.com', '2017-06-12', 80000.00, 'Operations'),
+('Neha', 'Rao', 'neha.rao@example.com', '2021-12-01', 45000.00, 'HR'),
+('Arjun', 'Kapoor', 'arjun.kapoor@example.com', '2019-08-25', 72000.00, 'IT'),
+('Meera', 'Joshi', 'meera.joshi@example.com', '2020-04-14', 53000.00, 'Sales'),
+('Rahul', 'Nair', 'rahul.nair@example.com', '2018-10-20', 69000.00, 'Finance'),
+('Divya', 'Chauhan', 'divya.chauhan@example.com', '2022-05-09', 47000.00, 'HR'),
+('Sahil', 'Malhotra', 'sahil.malhotra@example.com', '2019-01-03', 81000.00, 'Operations'),
+('Pooja', 'Bhatia', 'pooja.bhatia@example.com', '2021-03-27', 56000.00, 'Marketing'),
+('Manish', 'Kumar', 'manish.kumar@example.com', '2020-07-19', 60000.00, 'IT'),
+('Ritika', 'Shah', 'ritika.shah@example.com', '2018-12-11', 74000.00, 'Finance'),
+('Deepak', 'Reddy', 'deepak.reddy@example.com', '2022-08-16', 52000.00, 'Sales'),
+('Komal', 'Desai', 'komal.desai@example.com', '2019-05-28', 68000.00, 'HR'),
+('Suresh', 'Iyer', 'suresh.iyer@example.com', '2021-09-07', 49000.00, 'Operations'),
+('Alok', 'Mishra', 'alok.mishra@example.com', '2020-02-23', 77000.00, 'Marketing');
+GO
 
 
 
