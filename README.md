@@ -116,7 +116,7 @@ Foundations (3-4 weeks) → Intermediate (4-6 weeks) → Advanced (6-8 weeks) �
 
 ### 🎯 Projects
 
-#### Project 1.1: Library Database 
+#### Project 1.1: Library Database  - DONE
 **Description:** Create a simple library management system
 
 **Tasks:**
@@ -128,7 +128,7 @@ Foundations (3-4 weeks) → Intermediate (4-6 weeks) → Advanced (6-8 weeks) �
    - Show available books only
    - List members who joined this year
 
-#### Project 1.2: E-commerce Product Catalog
+#### Project 1.2: E-commerce Product Catalog - DONE
 **Description:** Build a product database
 
 **Tables:**
@@ -142,7 +142,7 @@ Foundations (3-4 weeks) → Intermediate (4-6 weeks) → Advanced (6-8 weeks) �
 - Top 10 most expensive products
 - Products with stock less than 10 units
 
-#### Project 1.3: Employee Directory
+#### Project 1.3: Employee Directory - DONE
 **Description:** Create an employee management database
 
 **Schema Design:**
@@ -151,7 +151,7 @@ Foundations (3-4 weeks) → Intermediate (4-6 weeks) → Advanced (6-8 weeks) �
 
 ---
 
-## Phase 2: Data Manipulation & Filtering
+## Phase 2: Data Manipulation & Filtering - PROGRESS
 **Duration:** 2-3 weeks | **Level:** Beginner
 
 ### 📚 Topics to Cover
