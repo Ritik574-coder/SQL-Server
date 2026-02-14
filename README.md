@@ -157,8 +157,8 @@ Foundations (3-4 weeks) → Intermediate (4-6 weeks) → Advanced (6-8 weeks) �
 ### 📚 Topics to Cover
 
 #### 2.1 WHERE Clause
-- [ ] Filtering rows with WHERE
-- [ ] Comparison operators (=, !=, <, >, <=, >=)
+- [DONE] Filtering rows with WHERE
+- [] Comparison operators (=, !=, <, >, <=, >=)
 - [ ] BETWEEN operator
 - [ ] IN operator
 - [ ] NOT IN operator
