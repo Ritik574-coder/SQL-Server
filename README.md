@@ -166,7 +166,7 @@ Foundations (3-4 weeks) → Intermediate (4-6 weeks) → Advanced (6-8 weeks) �
 - [DONE] LIKE and ILIKE (pattern matching)
 - [DONE] Wildcards (%, _)
 
-#### 2.2 Logical Operators
+#### 2.2 Logical Operators - PROGRESS
 - [ ] AND operator
 - [ ] OR operator
 - [ ] NOT operator
