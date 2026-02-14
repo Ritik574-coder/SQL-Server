@@ -161,10 +161,10 @@ Foundations (3-4 weeks) → Intermediate (4-6 weeks) → Advanced (6-8 weeks) �
 - [DONE] Comparison operators (=, !=, <, >, <=, >=)
 - [DONE] BETWEEN operator
 - [DONE] IN operator
-- [ ] NOT IN operator
-- [ ] IS NULL and IS NOT NULL
-- [ ] LIKE and ILIKE (pattern matching)
-- [ ] Wildcards (%, _)
+- [DONE] NOT IN operator
+- [DONE] IS NULL and IS NOT NULL
+- [DONE] LIKE and ILIKE (pattern matching)
+- [DONE] Wildcards (%, _)
 
 #### 2.2 Logical Operators
 - [ ] AND operator
