@@ -77,30 +77,66 @@ Database: WideWorldImporters
 Tables: Sales.Orders
 */
 SELECT DISTINCT 
-CustomerID
+    CustomerID
 FROM Sales.Orders
 WHERE CustomerID BETWEEN 1 AND 300 
     AND CustomerID IS NOT NULL
     AND CustomerID NOT IN(5,15,25,35);
     
  /*
-QUESTION 6: Find orders where CustomerPurchaseOrderNumber contains 'PO' using CHARINDEX AND also contains '2'
+QUESTION 6: Find orders where CustomerPurchaseOrderNumber contains '9' using CHARINDEX AND also contains '2'
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    *
+FROM sales.Orders
+    WHERE CHARINDEX('9' , CustomerPurchaseOrderNumber) > 0 
+    AND CHARINDEX('2', CustomerPurchaseOrderNumber) > 0 
 
  /*
 QUESTION 7: Retrieve orders where CustomerPurchaseOrderNumber has at least one digit using PATINDEX AND does not contain '0'
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+-- FIRST QUERY 
+SELECT 
+    *
+FROM Sales.Orders
+WHERE PATINDEX('%[1-9]%', CustomerPurchaseOrderNumber) > 0
+    AND CHARINDEX('0', CustomerPurchaseOrderNumber) = 0 ;
+
+--SECOND QUERY 
+SELECT 
+    *
+FROM Sales.Orders
+WHERE PATINDEX('%[1-9]%', CustomerPurchaseOrderNumber) > 0
+    AND PATINDEX('%0%', CustomerPurchaseOrderNumber) = 0 
+
+-- THIRD QUERY 
+SELECT 
+    *
+FROM Sales.Orders
+WHERE CustomerPurchaseOrderNumber LIKE '%[1-9]%'
+    AND CustomerPurchaseOrderNumber NOT LIKE '%0%' ;
 
  /*
 QUESTION 8: Find orders where CustomerID < 50 OR CustomerID > 300 AND CustomerID NOT IN (1,2,3,4)
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
-
+SELECT 
+    OrderID,
+    CustomerID,
+    SalespersonPersonID,
+    PickedByPersonID,
+    ContactPersonID,
+    BackorderOrderID,
+    OrderDate,
+    ExpectedDeliveryDate
+FROM Sales.Orders 
+WHERE (CustomerID < 50 OR CustomerID > 300)
+    AND CustomerID NOT IN(1,2,3,4) ;
  /*
 QUESTION 9: Retrieve orders where CustomerID BETWEEN 100 AND 200 AND CustomerPurchaseOrderNumber IS NOT NULL AND NOT LIKE '%5%'
 Database: WideWorldImporters
