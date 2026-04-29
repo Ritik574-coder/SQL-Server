@@ -69,7 +69,7 @@ SELECT
     PickingCompletedWhen
 FROM Sales.Orders
 WHERE PickingCompletedWhen IS NOT NULL
-AND CustomerID BETWEEN 100 AND 200 ;
+AND CustomerID NOT BETWEEN 100 AND 200 ;
 
  /*
 QUESTION 5: Retrieve DISTINCT CustomerID where CustomerID BETWEEN 1 AND 300 AND CustomerID NOT IN (5,15,25,35)
@@ -135,26 +135,44 @@ SELECT
     OrderDate,
     ExpectedDeliveryDate
 FROM Sales.Orders 
-WHERE (CustomerID < 50 OR CustomerID > 300)
-    AND CustomerID NOT IN(1,2,3,4) ;
- /*
+WHERE (CustomerID NOT IN(1,2,3,4) OR CustomerID IS NULL)
+    AND(CustomerID < 50 OR CustomerID > 300);
+ /* 
 QUESTION 9: Retrieve orders where CustomerID BETWEEN 100 AND 200 AND CustomerPurchaseOrderNumber IS NOT NULL AND NOT LIKE '%5%'
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    *
+FROM Sales.Orders 
+WHERE CustomerID BETWEEN 100 AND 200 
+    AND CustomerPurchaseOrderNumber IS NOT NULL 
+    AND CustomerPurchaseOrderNumber NOT LIKE '%5%' ;
 
  /*
-QUESTION 10: Find orders where CustomerPurchaseOrderNumber LIKE '%PO%' AND LIKE '%3%' AND LIKE '%4%'
+QUESTION 10: Find orders where CustomerPurchaseOrderNumber LIKE '1%' AND LIKE '%3%' AND LIKE '%4'
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
-
+SELECT 
+    * 
+FROM Sales.Orders 
+WHERE CustomerPurchaseOrderNumber LIKE '1%' 
+    AND CustomerPurchaseOrderNumber LIKE '%3%'
+    AND CustomerPurchaseOrderNumber LIKE '%4';
  /*
 QUESTION 11: Retrieve orders grouped by CustomerID HAVING COUNT(*) > 5 AND CustomerID NOT IN (10,20)
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
-
+SELECT 
+    CustomerID ,
+    COUNT(*) as custoemr_id_count
+FROM Sales.Orders 
+WHERE CustomerID NOT IN(10,20)
+    GROUP BY CustomerID 
+    HAVING COUNT(*) > 5 ;
+    
  /*
 QUESTION 12: Find CustomerID groups where COUNT(*) BETWEEN 3 AND 10 AND CustomerID BETWEEN 50 AND 200
 Database: WideWorldImporters
@@ -214,60 +232,123 @@ QUESTION 21: Retrieve orders where CustomerID BETWEEN 1 AND 100 AND CustomerID N
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
-
+SELECT 
+    *
+FROM Sales.Orders
+WHERE CustomerID BETWEEN 1 AND 100 
+    AND CustomerID NOT IN (SELECT DISTINCT TOP 10 CustomerID FROM Sales.Orders ORDER BY CustomerID) ;
+    
  /*
 QUESTION 22: Find orders where CustomerPurchaseOrderNumber LIKE '%A%' OR LIKE '%B%' AND NOT LIKE '%C%'
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    *
+FROM Sales.Orders
+WHERE CustomerPurchaseOrderNumber LIKE '%A%'
+    OR CustomerPurchaseOrderNumber LIKE '%B%'
+    AND CustomerPurchaseOrderNumber NOT LIKE '%C%' ;
 
  /*
 QUESTION 23: Retrieve orders where CustomerID BETWEEN 100 AND 300 AND CustomerID IN (150,160,170,180,190)
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    *
+FROM Sales.Orders
+WHERE CustomerID BETWEEN 100 AND 300 
+    AND CustomerID IN (150,160,170,180,190) ;
 
  /*
 QUESTION 24: Find orders where CustomerPurchaseOrderNumber contains numeric pattern AND contains 'PO' AND NOT LIKE '%7%'
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    * 
+FROM Sales.Orders
+WHERE PATINDEX('%[0-9]%', CustomerPurchaseOrderNumber) > 0
+    AND PATINDEX('%PO%', CustomerPurchaseOrderNumber) > 0 
+    AND CustomerPurchaseOrderNumber NOT LIKE '%7%' ;
 
  /*
 QUESTION 25: Retrieve orders grouped by CustomerID HAVING COUNT(*) > 2 AND COUNT(*) < 10
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT
+    CustomerID,
+    COUNT(*) customer_count
+FROM Sales.Orders
+GROUP BY CustomerID 
+    HAVING COUNT(*) < 10
+    AND COUNT(*) > 2 ;
 
  /*
 QUESTION 26: Find orders where CustomerID NOT BETWEEN 200 AND 400 AND CustomerID IN (10,20,30,40,50)
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    *
+FROM Sales.Orders
+WHERE CustomerID NOT BETWEEN 200 AND 400
+    AND CustomerID IN (10,20,30,40,50) ;
 
  /*
 QUESTION 27: Retrieve orders where CustomerPurchaseOrderNumber LIKE '%X%' AND LIKE '%Y%' AND LIKE '%Z%'
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    * 
+FROM Sales.Orders 
+WHERE CustomerPurchaseOrderNumber LIKE '%X%'
+    AND CustomerPurchaseOrderNumber LIKE '%Y$%'
+    AND CustomerPurchaseOrderNumber LIKE '%Z%' ;
 
  /*
 QUESTION 28: Find orders where CustomerID BETWEEN 50 AND 150 AND CustomerID NOT IN (60,70,80,90)
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    * 
+FROM Sales.Orders
+WHERE CustomerID NOT IN(60,70,80,90)
+    AND CustomerID BETWEEN 50 AND 150 ;
 
  /*
 QUESTION 29: Retrieve orders where CustomerID BETWEEN 1 AND 500 ORDER BY CustomerID DESC OFFSET 100 ROWS FETCH NEXT 50 ROWS ONLY
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    * 
+FROM Sales.Orders
+WHERE CustomerID BETWEEN 1 AND 500
+ORDER BY CustomerID DESC 
+    OFFSET 100 ROWS FETCH NEXT 50 ROWS ONLY ;
 
  /*
-QUESTION 30: Find orders where CustomerPurchaseOrderNumber contains 'PO', contains at least one digit, and does not contain '0'
+QUESTION 30: Find orders where CustomerPurchaseOrderNumber not contains 'PO', contains at least one digit, and does not contain '0'
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    *
+FROM Sales.Orders
+WHERE CustomerPurchaseOrderNumber NOT LIKE '%PO%' 
+    AND CustomerPurchaseOrderNumber LIKE '%[1-9]%'
+    AND CustomerPurchaseOrderNumber NOT LIKE '%0%' ;
+
+
+
+
+
+
 SELECT 
     CountryID,
     CountryName,
