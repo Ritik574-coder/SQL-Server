@@ -174,58 +174,121 @@ WHERE CustomerID NOT IN(10,20)
     HAVING COUNT(*) > 5 ;
     
  /*
-QUESTION 12: Find CustomerID groups where COUNT(*) BETWEEN 3 AND 10 AND CustomerID BETWEEN 50 AND 200
+QUESTION 12: Find CustomerID groups where COUNT(*) BETWEEN 90 AND 100 AND CustomerID BETWEEN 50 AND 200
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT
+    CustomerID,
+    COUNT(*) customer_count
+FROM Sales.Orders 
+WHERE CustomerID BETWEEN 50 AND 200
+GROUP  BY CustomerID 
+HAVING COUNT(*) BETWEEN 90 AND 100 ;
+
+SELECT
+    CustomerID,
+    COUNT(*) AS customer_count
+FROM Sales.Orders
+GROUP BY CustomerID
+HAVING COUNT(*) BETWEEN 90 AND 100
+   AND CustomerID BETWEEN 50 AND 200;
 
  /*
 QUESTION 13: Retrieve orders where CustomerID IN (SELECT DISTINCT CustomerID) -- simulate logic without subquery using DISTINCT + GROUP BY thinking
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+--# it always return true os 
+SELECT *
+FROM Sales.Orders
+WHERE CustomerID IN (
+    SELECT DISTINCT CustomerID FROM Sales.Orders
+);
 
+SELECT 
+    *
+FROM Sales.Orders ;
  /*
 QUESTION 14: Find orders where CustomerPurchaseOrderNumber contains '1', '2', and '3' but NOT '8'
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    *
+FROM Sales.Orders
+WHERE   CustomerPurchaseOrderNumber     LIKE '%1%'
+    AND CustomerPurchaseOrderNumber     LIKE '%2%'
+    AND CustomerPurchaseOrderNumber     LIKE '%3%'
+    AND CustomerPurchaseOrderNumber NOT LIKE '%8%' ;
 
  /*
 QUESTION 15: Retrieve orders ordered by CustomerID ASC OFFSET 20 ROWS FETCH NEXT 30 ROWS ONLY where CustomerID BETWEEN 1 AND 500
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
-
+SELECT 
+    *
+FROM Sales.Orders
+WHERE CustomerID BETWEEN 1 AND 500
+ORDER BY CustomerID ASC 
+OFFSET 20 ROWS FETCH NEXT 30 ROWS ONLY ;
  /*
 QUESTION 16: Find orders where CustomerID NOT IN (100,200,300) AND CustomerID BETWEEN 50 AND 400 AND PickingCompletedWhen IS NULL
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
-
+SELECT 
+    *
+FROM Sales.Orders
+WHERE CustomerID NOT IN(100, 200, 300)
+    AND CustomerID BETWEEN 50 AND 400
+    AND PickingCompletedWhen IS NULL ;
  /*
 QUESTION 17: Retrieve orders where CustomerPurchaseOrderNumber LIKE 'P%' AND NOT LIKE '%Z%' AND contains at least one digit
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    *
+FROM Sales.Orders
+WHERE CustomerPurchaseOrderNumber LIKE 'P%'
+    AND CustomerPurchaseOrderNumber NOT LIKE '%Z%'
+    AND CustomerPurchaseOrderNumber LIKE '%[0-9]%' ;
 
  /*
 QUESTION 18: Find orders where CustomerID BETWEEN 10 AND 500 AND NOT (CustomerID BETWEEN 100 AND 200)
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    *
+FROM Sales.Orders
+WHERE CustomerID BETWEEN 10 AND 500
+    AND NOT (CustomerID BETWEEN 100 AND 200) ;
 
  /*
 QUESTION 19: Retrieve DISTINCT CustomerID ORDER BY CustomerID DESC OFFSET 10 ROWS FETCH NEXT 50 ROWS ONLY
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT DISTINCT 
+    CustomerID
+FROM Sales.Orders
+ORDER BY CustomerID DESC 
+OFFSET 10 ROWS FETCH NEXT 50 ROWS ONLY ;
 
  /*
 QUESTION 20: Find orders where CustomerPurchaseOrderNumber contains 'PO' AND does not contain '1' AND does not contain '2'
 Database: WideWorldImporters
 Tables: Sales.Orders
 */
+SELECT 
+    *
+FROM Sales.Orders 
+WHERE CustomerPurchaseOrderNumber LIKE '%PO%'
+    AND CustomerPurchaseOrderNumber NOT LIKE '%1%'
+    AND CustomerPurchaseOrderNumber NOT LIKE '%2%'
 
  /*
 QUESTION 21: Retrieve orders where CustomerID BETWEEN 1 AND 100 AND CustomerID NOT IN (SELECT TOP 10 CustomerID ORDER BY CustomerID) -- think logic without subquery
@@ -343,46 +406,3 @@ FROM Sales.Orders
 WHERE CustomerPurchaseOrderNumber NOT LIKE '%PO%' 
     AND CustomerPurchaseOrderNumber LIKE '%[1-9]%'
     AND CustomerPurchaseOrderNumber NOT LIKE '%0%' ;
-
-
-
-
-
-
-SELECT 
-    CountryID,
-    CountryName,
-    FormalName,
-    IsoAlpha3Code,
-    IsoNumericCode,
-    CountryType,
-    LatestRecordedPopulation,
-    Continent,
-    Region,
-    Subregion
-FROM Application.Countries ;
-
-SELECT * FROM INFORMATION_SCHEMA.TABLES ;
-SELECT
-    TABLE_CATALOG,
-    TABLE_SCHEMA,
-    TABLE_NAME,
-    COLUMN_NAME,
-    DATA_TYPE,
-    ORDINAL_POSITION,
-    IS_NULLABLE 
-FROM INFORMATION_SCHEMA.COLUMNS 
-WHERE TABLE_SCHEMA = 'Application'
-AND TABLE_NAME = 'Countries';
-
-SELECT TOP 1000 * FROM Sales.Orders ;
-SELECT TOP 1000 * FROM Sales.OrderLines ;
-SELECT TOP 1000 * FROM Sales.Invoices ;
-
-
-SELECT TOP 10 * FROM  Application.People ;
-SELECT TOP 10 * FROM Application.Cities ;
-SELECT TOP 10 * FROM Application.Countries ;
-
-SELECT * FROM Application.Countries 
-WHERE CountryType IN ('UN Member State') ;
