@@ -1,0 +1,132 @@
+--############################################################
+--### WIDEWORLDIMPORTERS – JOIN PRACTICE (50 QUESTIONS) ######
+--############################################################
+
+
+---------------------------
+--### LEVEL 1 (1–15) – CORE JOINS
+---------------------------
+
+--1. Get OrderID, CustomerName using INNER JOIN.
+--
+--2. Get all customers and their orders (include customers with no orders).
+--
+--3. Get orders with salesperson full name.
+--
+--4. Get OrderID, CustomerName, OrderDate.
+--
+--5. Get all orders and corresponding picking person name.
+--
+--6. Get all orders with customer and salesperson in same query.
+--
+--7. Find all customers who have placed at least one order.
+--
+--8. Find all customers who have never placed any order.
+--
+--9. Get all orders with CustomerName and ContactPerson name.
+--
+--10. Get all order lines with StockItem name.
+--
+--11. Get OrderID and total number of items in that order.
+--
+--12. Get all orders where customer is from a specific city.
+--
+--13. Get all orders with delivery method name.
+--
+--14. Get orders and corresponding invoice ID (if exists).
+--
+--15. Get orders and show NULL where invoice not generated.
+--
+--
+---------------------------
+--### LEVEL 2 (16–30) – LOGIC + CONDITIONS
+---------------------------
+--
+--16. Find customers who have more than 5 orders.
+--
+--17. Find customers whose total order count is zero.
+--
+--18. Get top 10 customers by number of orders.
+--
+--19. Get orders where StockItem name contains 'USB'.
+--
+--20. Get orders where customer name starts with 'A'.
+--
+--21. Find orders that have more than 3 order lines.
+--
+--22. Get orders placed by specific salesperson.
+--
+--23. Find customers who ordered more than 10 different products.
+--
+--24. Get orders where any item price > 1000.
+--
+--25. Get orders with total order amount.
+--
+--26. Get customers with total spending > 50000.
+--
+--27. Get average order value per customer.
+--
+--28. Find orders where at least one item is out of stock.
+--
+--29. Get orders placed in a date range with customer details.
+--
+--30. Find orders where delivery city != customer city.
+--
+--
+---------------------------
+--### LEVEL 3 (31–40) – MULTI JOIN + EDGE CASES
+---------------------------
+--
+--31. Get OrderID, CustomerName, SalespersonName, StockItemName.
+--
+--32. Find duplicate joins causing row multiplication (detect).
+--
+--33. Find customers linked to multiple cities (data inconsistency check).
+--
+--34. Get orders with both picking and sales person names.
+--
+--35. Find orders with no order lines (data issue).
+--
+--36. Find StockItems never ordered.
+--
+--37. Find customers who ordered all products in a category.
+--
+--38. Get most frequently ordered product.
+--
+--39. Get least ordered product.
+--
+--40. Find customers who only ordered one product repeatedly.
+--
+--
+---------------------------
+--### LEVEL 4 (41–50) – HARD / REAL DATA ENGINEERING
+---------------------------
+--
+--41. Detect join explosion between Orders and OrderLines (compare counts).
+--
+--42. Validate 1:N relationship between Customers and Orders.
+--
+--43. Identify orphan records (Orders without Customers).
+--
+--44. Identify orphan records (OrderLines without Orders).
+--
+--45. Build a query to simulate FULL OUTER JOIN mismatch report.
+--
+--46. Find customers whose order total suddenly spiked (join + aggregation).
+--
+--47. Find inconsistent joins (same OrderID with multiple customers).
+--
+--48. Build anti-join to find missing invoices.
+--
+--49. Compare expected vs actual row count after multi-table join.
+--
+--50. Create a reconciliation report:
+--    - Total Orders
+--    - Total OrderLines
+--    - Mismatch count
+--    - Missing relationships
+--
+--
+--############################################################
+--################### END OF QUESTIONS ########################
+--############################################################
