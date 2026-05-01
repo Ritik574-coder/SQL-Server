@@ -1,0 +1,265 @@
+#####################################################
+### SQL JOINS – ADVANCED EXECUTION MASTER SCRIPT ####
+#####################################################
+
+
+1. JOIN (CORE CONCEPT)
+Description:
+Combines rows from two tables based on a condition. Result is row multiplication, not simple matching.
+
+When to use:
+Whenever data is split across tables and needs to be combined.
+
+
+2. JOIN EXECUTION LOGIC
+Description:
+For each row in Table A, SQL scans Table B and returns all matching combinations.
+
+When to use:
+To understand why row counts increase after joins.
+
+
+3. CARDINALITY (ROW MULTIPLICATION)
+Description:
+Defines how many rows from one table match rows in another.
+
+Types:
+1:1 → one row matches one row  
+1:N → one row matches many rows  
+N:N → many-to-many (causes explosion)
+
+When to use:
+Before writing joins to predict output size.
+
+
+4. DUPLICATE / CARTESIAN EXPLOSION
+Description:
+When multiple matches exist on both sides, rows multiply exponentially.
+
+When to use:
+To debug unexpected row count increases.
+
+
+5. INNER JOIN
+Description:
+Returns only rows where join condition is TRUE.
+
+When to use:
+When only valid matching records are required.
+
+
+6. LEFT JOIN
+Description:
+Returns all rows from left table and matching rows from right. Non-matching rows return NULL.
+
+When to use:
+For missing data detection and completeness checks.
+
+
+7. RIGHT JOIN
+Description:
+Returns all rows from right table and matching rows from left.
+
+When to use:
+Rarely used; can be rewritten as LEFT JOIN.
+
+
+8. FULL JOIN
+Description:
+Returns all rows from both tables, matching where possible, NULL otherwise.
+
+When to use:
+Data comparison and reconciliation.
+
+
+9. NULL PROPAGATION
+Description:
+If no match exists, columns from the joined table become NULL.
+
+When to use:
+To identify missing relationships or incomplete data.
+
+
+10. NULL MATCHING RULE
+Description:
+NULL never equals NULL in join conditions.
+
+When to use:
+To avoid missing matches when NULL values exist.
+
+
+11. JOIN CONDITION (ON)
+Description:
+Defines how tables are connected.
+
+When to use:
+Always specify correct keys to avoid incorrect joins.
+
+
+12. FILTER VS JOIN CONDITION (ON vs WHERE)
+Description:
+ON controls matching logic; WHERE filters final result.
+
+When to use:
+To prevent accidental conversion of LEFT JOIN into INNER JOIN.
+
+
+13. LEFT JOIN BREAK (COMMON ERROR)
+Description:
+Applying WHERE condition on right table removes NULL rows, turning LEFT JOIN into INNER JOIN.
+
+When to use:
+While debugging missing rows after LEFT JOIN.
+
+
+14. ANTI JOIN (NOT EXISTS / LEFT JOIN IS NULL)
+Description:
+Returns rows that do NOT have a match.
+
+When to use:
+Finding missing records.
+
+
+15. SEMI JOIN (EXISTS)
+Description:
+Returns rows where at least one match exists, without duplication.
+
+When to use:
+Checking existence instead of full join.
+
+
+16. MULTI-TABLE JOIN
+Description:
+Joining more than two tables in sequence.
+
+When to use:
+Complex queries involving multiple entities.
+
+
+17. JOIN ORDER
+Description:
+Sequence in which tables are logically combined.
+
+When to use:
+To maintain readability and correct logic.
+
+
+18. JOIN KEYS (PRIMARY / FOREIGN KEY)
+Description:
+Columns used to connect tables.
+
+When to use:
+Always use proper keys to avoid incorrect results.
+
+
+19. NON-KEY JOIN (DANGEROUS)
+Description:
+Joining on non-unique columns leads to duplication.
+
+When to use:
+Only when necessary and controlled.
+
+
+20. CROSS JOIN
+Description:
+Returns all possible combinations of both tables.
+
+When to use:
+Rare use cases like generating combinations.
+
+
+21. SELF JOIN
+Description:
+Table joined with itself.
+
+When to use:
+Hierarchies, relationships within same table.
+
+
+22. JOIN WITH AGGREGATION
+Description:
+Joining and then grouping results.
+
+When to use:
+Summaries like total orders per customer.
+
+
+23. FILTER BEFORE JOIN
+Description:
+Reduce dataset before joining.
+
+When to use:
+Performance optimization and reducing explosion.
+
+
+24. FILTER AFTER JOIN
+Description:
+Apply conditions after combining data.
+
+When to use:
+When filtering depends on joined columns.
+
+
+25. JOIN PERFORMANCE (CONCEPT)
+Description:
+Large joins increase computation cost.
+
+When to use:
+When working with large datasets.
+
+
+26. DATA SKEW
+Description:
+Uneven distribution of key values causes imbalance.
+
+When to use:
+In large-scale data processing systems.
+
+
+27. PIPELINE BREAK (REAL-WORLD FAILURE)
+Description:
+Joins can break pipelines due to:
+- Row explosion
+- Missing matches
+- Incorrect join keys
+- NULL issues
+
+When to use:
+While debugging ETL/data workflows.
+
+
+28. JOIN VALIDATION
+Description:
+Verifying correctness of join output.
+
+Methods:
+- Count before/after join
+- Check duplicates
+- Validate NULLs
+
+When to use:
+After every important join.
+
+
+29. EXPECTED ROW COUNT CHECK
+Description:
+Compare expected vs actual output rows.
+
+When to use:
+To detect join errors early.
+
+
+30. DEBUGGING STRATEGY
+Description:
+Break query into steps:
+- Check each table
+- Test join condition
+- Validate intermediate output
+
+When to use:
+When query results look incorrect.
+
+
+#####################################################
+############### END OF JOIN SCRIPT ###################
+#####################################################

@@ -406,3 +406,4 @@ FROM Sales.Orders
 WHERE CustomerPurchaseOrderNumber NOT LIKE '%PO%' 
     AND CustomerPurchaseOrderNumber LIKE '%[1-9]%'
     AND CustomerPurchaseOrderNumber NOT LIKE '%0%' ;
+
