@@ -1,0 +1,191 @@
+#############################################
+### SQL FILTER FUNCTIONS – QUICK REFERENCE ###
+#############################################
+
+1. WHERE
+Description:
+Filters rows based on a condition.
+
+When to use:
+Whenever you need to restrict rows returned from a table.
+
+
+2. AND
+Description:
+Combines multiple conditions where ALL must be TRUE.
+
+When to use:
+When all conditions must be satisfied.
+
+
+3. OR
+Description:
+Combines conditions where ANY can be TRUE.
+
+When to use:
+When at least one condition should match.
+
+
+4. NOT
+Description:
+Negates a condition.
+
+When to use:
+When you want to exclude specific logic.
+
+
+5. IN
+Description:
+Checks if a value exists in a list.
+
+When to use:
+When comparing against multiple fixed values.
+
+
+6. NOT IN
+Description:
+Excludes values present in a list.
+
+When to use:
+When filtering out specific values.
+
+
+7. BETWEEN
+Description:
+Filters values within a range (inclusive).
+
+When to use:
+When working with ranges (numbers, dates).
+
+
+8. LIKE
+Description:
+Pattern matching using wildcards (% and _).
+
+When to use:
+When searching partial text.
+
+
+9. NOT LIKE
+Description:
+Excludes pattern matches.
+
+When to use:
+When filtering out specific patterns.
+
+
+10. TOP
+Description:
+Limits number of rows returned.
+
+When to use:
+When you need only a subset of data.
+
+
+11. IS NULL
+Description:
+Checks for NULL values.
+
+When to use:
+When identifying missing data.
+
+
+12. IS NOT NULL
+Description:
+Checks for non-NULL values.
+
+When to use:
+When filtering valid/non-missing data.
+
+
+13. EXISTS
+Description:
+Checks if a subquery returns any row.
+
+When to use:
+When testing existence of related data.
+
+
+14. ALL
+Description:
+Compares a value to ALL values in a subquery.
+
+When to use:
+When condition must be true for every value.
+
+
+15. ANY / SOME
+Description:
+Compares a value to ANY value in a subquery.
+
+When to use:
+When condition must be true for at least one value.
+
+
+16. DISTINCT
+Description:
+Removes duplicate rows.
+
+When to use:
+When you need unique values.
+
+
+17. ORDER BY
+Description:
+Sorts result set.
+
+When to use:
+When ordering data (ASC/DESC).
+
+
+18. GROUP BY
+Description:
+Groups rows for aggregation.
+
+When to use:
+When using aggregate functions (COUNT, SUM, etc).
+
+
+19. HAVING
+Description:
+Filters grouped data.
+
+When to use:
+After GROUP BY to filter aggregated results.
+
+
+20. OFFSET
+Description:
+Skips a number of rows.
+
+When to use:
+For pagination.
+
+
+21. FETCH NEXT
+Description:
+Limits number of rows after OFFSET.
+
+When to use:
+Pagination with OFFSET.
+
+
+22. CHARINDEX
+Description:
+Finds position of substring in string.
+
+When to use:
+When checking if a substring exists.
+
+
+23. PATINDEX
+Description:
+Pattern search with wildcard support.
+
+When to use:
+When advanced pattern matching is needed.
+
+
+#############################################
+############ END OF FILE ####################
+#############################################
