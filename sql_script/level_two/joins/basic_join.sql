@@ -6,15 +6,58 @@
 --### LEVEL 1 (1–15) – CORE JOINS
 ---------------------------
 --1. Get OrderID, CustomerName using INNER JOIN.
-SELECT * FROM
+SELECT
+    o.OrderID,
+    c.CustomerID,
+    c.CustomerName
+FROM Sales.Customers as c 
+INNER JOIN Sales.Orders as o  
+ON c.CustomerID = o.CustomerID 
+ORDER BY  c.CustomerID;
+
 --2. Get all customers and their orders (include customers with no orders).
---
+SELECT
+    c.CustomerID,
+    o.OrderID,
+    c.CustomerName,
+    c.AccountOpenedDate,
+    c.PaymentDays,
+    c.PostalAddressLine1,
+    c.DeliveryAddressLine1,
+    c.WebsiteURL,
+    o.OrderDate,
+    o.ExpectedDeliveryDate
+FROM Sales.Customers as c   
+LEFT JOIN Sales.Orders as o  
+ON c.CustomerID = o.CustomerID 
+
 --3. Get orders with salesperson full name.
---
+SELECT 
+    so.OrderID,
+    so.CustomerPurchaseOrderNumber,
+    so.IsUndersupplyBackordered,
+    so.OrderDate,
+    so.ExpectedDeliveryDate,
+    ap.FullName as SalespersonName,
+    ap.PhoneNumber,
+    ap.EmailAddress
+FROM  Sales.Orders as so
+INNER JOIN Application.People as ap
+ON ap.PersonID = so.SalespersonPersonID
+ORDER BY so.OrderID ASC ;
+
 --4. Get OrderID, CustomerName, OrderDate.
---
+SELECT 
+    so.OrderID,
+    sc.CustomerName,
+    so.OrderDate
+FROM Sales.Orders as so 
+INNER JOIN Sales.Customers as sc 
+ON so.CustomerID = sc.CustomerID
+ORDER BY so.OrderID ASC ;
+
 --5. Get all orders and corresponding picking person name.
---
+
 --6. Get all orders with customer and salesperson in same query.
 --
 --7. Find all customers who have placed at least one order.
