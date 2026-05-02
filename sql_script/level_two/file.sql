@@ -68,3 +68,4 @@ WHERE OBJECT_NAME(fk.parent_object_id) = 'Orders'
 --quich snapshort 
 EXEC sp_help 'Sales.Orders';
 
+
