@@ -2,13 +2,11 @@
 --### WIDEWORLDIMPORTERS – JOIN PRACTICE (50 QUESTIONS) ######
 --############################################################
 
-
 ---------------------------
 --### LEVEL 1 (1–15) – CORE JOINS
 ---------------------------
-
 --1. Get OrderID, CustomerName using INNER JOIN.
---
+SELECT * FROM
 --2. Get all customers and their orders (include customers with no orders).
 --
 --3. Get orders with salesperson full name.
