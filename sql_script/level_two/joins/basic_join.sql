@@ -1,3 +1,4 @@
+-- Active: 1777886521665@@127.0.0.1@1433@WideWorldImporters
 --############################################################
 --### WIDEWORLDIMPORTERS – JOIN PRACTICE (50 QUESTIONS) ######
 --############################################################
@@ -57,6 +58,16 @@ ON so.CustomerID = sc.CustomerID
 ORDER BY so.OrderID ASC ;
 
 --5. Get all orders and corresponding picking person name.
+SELECT * FROM Sales."Orders"
+SELECT * FROM Application."People" ;
+
+SELECT 
+    so.PickedByPersonID,
+    ap.PersonID,
+    ap."FullName"
+FROM Sales.Orders as so
+INNER JOIN Application.People as ap
+ON so.PickedByPersonID = ap.PersonID
 
 --6. Get all orders with customer and salesperson in same query.
 --
