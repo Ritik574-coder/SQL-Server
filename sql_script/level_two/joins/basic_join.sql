@@ -1,4 +1,3 @@
--- Active: 1777886521665@@127.0.0.1@1433@WideWorldImporters
 --############################################################
 --### WIDEWORLDIMPORTERS – JOIN PRACTICE (50 QUESTIONS) ######
 --############################################################
@@ -58,25 +57,49 @@ ON so.CustomerID = sc.CustomerID
 ORDER BY so.OrderID ASC ;
 
 --5. Get all orders and corresponding picking person name.
-SELECT * FROM Sales."Orders"
-SELECT * FROM Application."People" ;
-
 SELECT 
+    so.OrderID,
     so.PickedByPersonID,
-    ap.PersonID,
-    ap."FullName"
+    ap.FullName as PickingPersonName
 FROM Sales.Orders as so
 INNER JOIN Application.People as ap
 ON so.PickedByPersonID = ap.PersonID
 
 --6. Get all orders with customer and salesperson in same query.
---
+SELECT 
+    so.OrderID,
+    so.CustomerID,
+    so.SalespersonPersonID,
+    sc.CustomerName,
+    ap.FullName as SalesPersonName
+FROM Sales.Orders as so  
+INNER JOIN Sales.Customers as sc 
+ON so.CustomerID = sc.CustomerID
+LEFT JOIN Application.People as ap 
+ON so.SalespersonPersonID = ap.PersonID ;
+
 --7. Find all customers who have placed at least one order.
---
+SELECT 
+    sc.CustomerID,
+    COUNT(*) as Order_count
+FROM Sales.Customers as sc
+LEFT JOIN Sales.Orders as so
+ON so.CustomerID = sc.CustomerID
+GROUP BY sc.CustomerID
+HAVING COUNT(so.OrderID) >= 1
+
 --8. Find all customers who have never placed any order.
---
+SELECT 
+    sc.CustomerID,
+    COUNT(*) as Order_count
+FROM Sales.Customers as sc
+LEFT JOIN Sales.Orders as so
+ON so.CustomerID = sc.CustomerID
+GROUP BY sc.CustomerID
+HAVING COUNT(so.OrderID) < 1
+
 --9. Get all orders with CustomerName and ContactPerson name.
---
+
 --10. Get all order lines with StockItem name.
 --
 --11. Get OrderID and total number of items in that order.
